@@ -3,27 +3,37 @@ import { makeStyles, withStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import Avatar from "@material-ui/core/Avatar";
+// import Avatar from "@material-ui/core/Avatar";
 import Container from "@material-ui/core/Container";
 import React from "react";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-import { Paper, CardActionArea, CardMedia, Grid, TableContainer, Table, TableBody, TableHead, TableRow, TableCell, Button, CircularProgress } from "@material-ui/core";
-import mitslogo from "./mitslogo.jpeg";
+import {
+  Paper,
+  CardActionArea,
+  CardMedia,
+  Grid,
+  TableContainer,
+  Table,
+  TableBody,
+  TableHead,
+  TableRow,
+  TableCell,
+  Button,
+  CircularProgress,
+} from "@material-ui/core";
+// import mitslogo from "./mitslogo.jpeg";
 import image from "./bg.png";
-import { DropzoneArea } from 'material-ui-dropzone';
-import { common } from '@material-ui/core/colors';
-import Clear from '@material-ui/icons/Clear';
-
-
-
+import { DropzoneArea } from "material-ui-dropzone";
+import { common } from "@material-ui/core/colors";
+import Clear from "@material-ui/icons/Clear";
 
 const ColorButton = withStyles((theme) => ({
   root: {
     color: theme.palette.getContrastText(common.white),
     backgroundColor: common.white,
-    '&:hover': {
-      backgroundColor: '#ffffff7a',
+    "&:hover": {
+      backgroundColor: "#ffffff7a",
     },
   },
 }))(Button);
@@ -50,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(2),
-    margin: 'auto',
+    margin: "auto",
     maxWidth: 500,
   },
   gridContainer: {
@@ -59,9 +69,9 @@ const useStyles = makeStyles((theme) => ({
   },
   mainContainer: {
     backgroundImage: `url(${image})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    backgroundSize: "cover",
     height: "93vh",
     marginTop: "8px",
   },
@@ -69,12 +79,12 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
     maxWidth: 400,
     height: 500,
-    backgroundColor: 'transparent',
-    boxShadow: '0px 9px 70px 0px rgb(0 0 0 / 30%) !important',
-    borderRadius: '15px',
+    backgroundColor: "transparent",
+    boxShadow: "0px 9px 70px 0px rgb(0 0 0 / 30%) !important",
+    borderRadius: "15px",
   },
   imageCardEmpty: {
-    height: 'auto',
+    height: "auto",
   },
   noImage: {
     margin: "auto",
@@ -82,66 +92,66 @@ const useStyles = makeStyles((theme) => ({
     height: "400 !important",
   },
   input: {
-    display: 'none',
+    display: "none",
   },
   uploadIcon: {
-    background: 'white',
+    background: "white",
   },
   tableContainer: {
-    backgroundColor: 'transparent !important',
-    boxShadow: 'none !important',
+    backgroundColor: "transparent !important",
+    boxShadow: "none !important",
   },
   table: {
-    backgroundColor: 'transparent !important',
+    backgroundColor: "transparent !important",
   },
   tableHead: {
-    backgroundColor: 'transparent !important',
+    backgroundColor: "transparent !important",
   },
   tableRow: {
-    backgroundColor: 'transparent !important',
+    backgroundColor: "transparent !important",
   },
   tableCell: {
-    fontSize: '22px',
-    backgroundColor: 'transparent !important',
-    borderColor: 'transparent !important',
-    color: '#000000a6 !important',
-    fontWeight: 'bolder',
-    padding: '1px 24px 1px 16px',
+    fontSize: "22px",
+    backgroundColor: "transparent !important",
+    borderColor: "transparent !important",
+    color: "#000000a6 !important",
+    fontWeight: "bolder",
+    padding: "1px 24px 1px 16px",
   },
   tableCell1: {
-    fontSize: '14px',
-    backgroundColor: 'transparent !important',
-    borderColor: 'transparent !important',
-    color: '#000000a6 !important',
-    fontWeight: 'bolder',
-    padding: '1px 24px 1px 16px',
+    fontSize: "14px",
+    backgroundColor: "transparent !important",
+    borderColor: "transparent !important",
+    color: "#000000a6 !important",
+    fontWeight: "bolder",
+    padding: "1px 24px 1px 16px",
   },
   tableBody: {
-    backgroundColor: 'transparent !important',
+    backgroundColor: "transparent !important",
   },
   text: {
-    color: 'white !important',
-    textAlign: 'center',
+    color: "white !important",
+    textAlign: "center",
   },
   buttonGrid: {
     maxWidth: "416px",
     width: "100%",
   },
   detail: {
-    backgroundColor: 'white',
-    display: 'flex',
-    justifyContent: 'center',
-    flexDirection: 'column',
-    alignItems: 'center',
+    backgroundColor: "white",
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column",
+    alignItems: "center",
   },
   appbar: {
-    background: '#be6a77',
-    boxShadow: 'none',
-    color: 'white'
+    background: "#be6a77",
+    boxShadow: "none",
+    color: "white",
   },
   loader: {
-    color: '#be6a77 !important',
-  }
+    color: "#be6a77 !important",
+  },
 }));
 export const ImageUpload = () => {
   const classes = useStyles();
@@ -166,7 +176,7 @@ export const ImageUpload = () => {
       }
       setIsloading(false);
     }
-  }
+  };
 
   const clearData = () => {
     setData(null);
@@ -213,13 +223,17 @@ export const ImageUpload = () => {
       <AppBar position="static" className={classes.appbar}>
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
-            M and J : Plant Disease Classification
+            Plant Disease Classification
           </Typography>
           <div className={classes.grow} />
-          <Avatar src={mitslogo}></Avatar>
+          {/* <Avatar src={mitslogo}></Avatar> */}
         </Toolbar>
       </AppBar>
-      <Container maxWidth={false} className={classes.mainContainer} disableGutters={true}>
+      <Container
+        maxWidth={false}
+        className={classes.mainContainer}
+        disableGutters={true}
+      >
         <Grid
           className={classes.gridContainer}
           container
@@ -229,60 +243,107 @@ export const ImageUpload = () => {
           spacing={2}
         >
           <Grid item xs={12}>
-            <Card className={`${classes.imageCard} ${!image ? classes.imageCardEmpty : ''}`}>
-              {image && <CardActionArea>
-                <CardMedia
-                  className={classes.media}
-                  image={preview}
-                  component="image"
-                  title="Contemplative Reptile"
-                />
-              </CardActionArea>
-              }
-              {!image && <CardContent className={classes.content}>
-                <DropzoneArea
-                  acceptedFiles={['image/*']}
-                  dropzoneText={"Drag and drop an image of a plant leaf to process"}
-                  onChange={onSelectFile}
-                />
-              </CardContent>}
-              {data && <CardContent className={classes.detail}>
-                <TableContainer component={Paper} className={classes.tableContainer}>
-                  <Table className={classes.table} size="small" aria-label="simple table">
-                    <TableHead className={classes.tableHead}>
-                      <TableRow className={classes.tableRow}>
-                        <TableCell className={classes.tableCell1}>Label:</TableCell>
-                        <TableCell align="right" className={classes.tableCell1}>Confidence:</TableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody className={classes.tableBody}>
-                      <TableRow className={classes.tableRow}>
-                        <TableCell component="th" scope="row" className={classes.tableCell}>
-                          {data.class}
-                        </TableCell>
-                        <TableCell align="right" className={classes.tableCell}>{confidence}%</TableCell>
-                      </TableRow>
-                    </TableBody>
-                  </Table>
-                </TableContainer>
-              </CardContent>}
-              {isLoading && <CardContent className={classes.detail}>
-                <CircularProgress color="secondary" className={classes.loader} />
-                <Typography className={classes.title} variant="h6" noWrap>
-                  Processing
-                </Typography>
-              </CardContent>}
+            <Card
+              className={`${classes.imageCard} ${
+                !image ? classes.imageCardEmpty : ""
+              }`}
+            >
+              {image && (
+                <CardActionArea>
+                  <CardMedia
+                    className={classes.media}
+                    image={preview}
+                    component="image"
+                    title="Contemplative Reptile"
+                  />
+                </CardActionArea>
+              )}
+              {!image && (
+                <CardContent className={classes.content}>
+                  <DropzoneArea
+                    acceptedFiles={["image/*"]}
+                    dropzoneText={
+                      "Drag and drop an image of a plant leaf to process"
+                    }
+                    onChange={onSelectFile}
+                  />
+                </CardContent>
+              )}
+              {data && (
+                <CardContent className={classes.detail}>
+                  <TableContainer
+                    component={Paper}
+                    className={classes.tableContainer}
+                  >
+                    <Table
+                      className={classes.table}
+                      size="small"
+                      aria-label="simple table"
+                    >
+                      <TableHead className={classes.tableHead}>
+                        <TableRow className={classes.tableRow}>
+                          <TableCell className={classes.tableCell1}>
+                            Label:
+                          </TableCell>
+                          <TableCell
+                            align="right"
+                            className={classes.tableCell1}
+                          >
+                            Confidence:
+                          </TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody className={classes.tableBody}>
+                        <TableRow className={classes.tableRow}>
+                          <TableCell
+                            component="th"
+                            scope="row"
+                            className={classes.tableCell}
+                          >
+                            {data.class}
+                          </TableCell>
+                          <TableCell
+                            align="right"
+                            className={classes.tableCell}
+                          >
+                            {confidence}%
+                          </TableCell>
+                        </TableRow>
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
+                </CardContent>
+              )}
+              {isLoading && (
+                <CardContent className={classes.detail}>
+                  <CircularProgress
+                    color="secondary"
+                    className={classes.loader}
+                  />
+                  <Typography className={classes.title} variant="h6" noWrap>
+                    Processing
+                  </Typography>
+                </CardContent>
+              )}
             </Card>
           </Grid>
-          {data &&
-            <Grid item className={classes.buttonGrid} >
-
-              <ColorButton variant="contained" className={classes.clearButton} color="primary" component="span" size="large" onClick={clearData} startIcon={<Clear fontSize="large" />}>
+          {data && (
+            <Grid item className={classes.buttonGrid}>
+              <ColorButton
+                variant="contained"
+                className={classes.clearButton}
+                color="primary"
+                component="span"
+                size="large"
+                onClick={clearData}
+                startIcon={<Clear fontSize="large" />}
+              >
                 Clear
               </ColorButton>
-            </Grid>}
-        </Grid >
-      </Container >
-    </React.Fragment >
+            </Grid>
+          )}
+        </Grid>
+      </Container>
+    </React.Fragment>
   );
 };

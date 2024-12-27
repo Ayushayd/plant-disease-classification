@@ -5,3 +5,6 @@ __pycache__
 .ipynb_checkpoints
 models.config
 PlantVillage/
+/training/AugmentedImages
+/training/dataset_type_of_plants
+/myenv
