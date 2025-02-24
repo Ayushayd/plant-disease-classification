@@ -1,80 +1,4 @@
 
-
-# from fastapi import FastAPI, File, UploadFile
-# from fastapi.middleware.cors import CORSMiddleware
-# import uvicorn
-# import numpy as np
-# import io
-# from PIL import Image
-# import tensorflow as tf
-
-# app = FastAPI()
-
-# origins = [
-#     "http://localhost",
-#     "http://localhost:3000",
-# ]
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=origins,
-#     allow_credentials=True,
-#     allow_methods=["*"],
-#     allow_headers=["*"],
-# )
-
-# MODEL = tf.keras.models.load_model("../tomatoes.h5")
-
-# CLASS_NAMES = ["Early Blight", "Late Blight", "Healthy"]
-
-# @app.get("/ping")
-# async def ping():
-#     return "Hello, I am alive"
-
-# def read_file_as_image(file_bytes):
-#     # Convert bytes to PIL Image
-#     image = Image.open(io.BytesIO(file_bytes))
-#     # Convert PIL Image to NumPy array
-#     image_array = np.array(image)
-#     return image_array
-
-
-# def preprocess_image(image_array, target_size=(256, 256)):
-#     # Convert NumPy array to PIL Image
-#     image = Image.fromarray(image_array)
-#     # Resize image
-#     image = image.resize(target_size)
-#     # Convert back to NumPy array and normalize pixel values
-#     image_array = np.array(image) / 255.0
-#     return image_array
-
-
-
-# @app.post("/predict")
-# async def predict(
-#     file: UploadFile = File(...)
-# ):
-#     image_array = read_file_as_image(await file.read())
-#     img_batch = preprocess_image(image_array)
-#     img_batch = np.expand_dims(img_batch, 0)  # Add batch dimension
-
-#     # Ensure input shape matches model's expected shape
-#     print(f"Model input shape: {MODEL.input_shape}")
-#     print(f"Input shape: {img_batch.shape}")
-    
-#     predictions = MODEL.predict(img_batch)
-
-#     predicted_class = CLASS_NAMES[np.argmax(predictions[0])]
-#     confidence = np.max(predictions[0])
-#     return {
-#         'class': predicted_class,
-#         'confidence': float(confidence)
-#     }
-
-# if __name__ == "__main__":
-#     uvicorn.run(app, host='localhost', port=8000)
-
-
-
 from fastapi import FastAPI, File, UploadFile
 
 from fastapi.middleware.cors import CORSMiddleware
@@ -91,11 +15,11 @@ app = FastAPI()
 
 origins = [
     "http://localhost",
-    "http://localhost:3000",
+    "http://localhost:5137",
 ]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # React app origin
+    allow_origins=["*"],  # React app origin
     allow_credentials=True,
     allow_methods=["*"],  # Allow all HTTP methods
     allow_headers=["*"],  # Allow all headers

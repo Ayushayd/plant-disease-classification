@@ -223,7 +223,7 @@ export const ImageUpload = () => {
       <AppBar position="static" className={classes.appbar}>
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
-            Plant Disease Classification
+            Plant Type Classification
           </Typography>
           <div className={classes.grow} />
           {/* <Avatar src={mitslogo}></Avatar> */}

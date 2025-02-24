@@ -7,4 +7,5 @@ models.config
 PlantVillage/
 /training/AugmentedImages
 /training/dataset_type_of_plants
+/training/Plants_2
 /myenv
